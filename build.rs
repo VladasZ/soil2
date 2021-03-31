@@ -5,7 +5,7 @@ use std::env;
 use cmake::Config;
 
 fn main() {
-    let dst = cmake::build("soil2");
+    let dst = cmake::build("SOIL2");
     println!("cargo:rustc-link-search=native={}", dst.display());
 
 
