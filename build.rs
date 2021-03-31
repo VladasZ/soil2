@@ -5,11 +5,11 @@ use std::env;
 use cmake::Config;
 
 fn main() {
-    let dst = cmake::build("SOIL2");
+    let dst = cmake::build("soil2");
     println!("cargo:rustc-link-search=native={}", dst.display());
 
 
-    let mut config = Config::new("SOIL2");
+    let mut config = Config::new("soil2");
 
     let dst = config
         .profile("Release")
@@ -17,6 +17,6 @@ fn main() {
 
     let out_dir = env::var("OUT_DIR").unwrap();
     println!("cargo:rustc-link-search=native={}/lib", dst.display());
-    println!("cargo:rustc-link-lib=static=SOIL2");
+    println!("cargo:rustc-link-lib=static=soil2");
     println!("cargo:outdir={}", out_dir);
 }

@@ -1,5 +1,5 @@
 /**
-	@mainpage SOIL2
+	@mainpage soil2
 
 	Fork by Martin Lucas Golini
 	
