@@ -4,4 +4,4 @@ project(test)
 add_catalog_recursive(${PROJECT_SOURCE_DIR} / test_SOURCE)
 add_executable(${PROJECT_NAME} ${test_SOURCE})
 
-target_link_libraries(soil2)
+target_link_libraries(${PROJECT_NAME} soil2)
