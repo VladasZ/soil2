@@ -24,7 +24,11 @@ endif()
 
 install(TARGETS ${PROJECT_NAME}
         CONFIGURATIONS Debug
+        ARCHIVE DESTINATION Debug/bin
+        LIBRARY DESTINATION Debug/bin
         RUNTIME DESTINATION Debug/bin)
 install(TARGETS ${PROJECT_NAME}
         CONFIGURATIONS Release
+        ARCHIVE DESTINATION Release/bin
+        LIBRARY DESTINATION Release/bin
         RUNTIME DESTINATION Release/bin)
