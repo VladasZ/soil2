@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.9.2 FATAL_ERROR)
 
+include(../utils.cmake)
+
 project(soil2 CXX)
 add_catalog_recursive(${PROJECT_SOURCE_DIR} / soil2_SOURCE)
 add_library(${PROJECT_NAME} ${soil2_SOURCE})
