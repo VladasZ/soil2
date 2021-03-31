@@ -17,6 +17,6 @@ fn main() {
 
     let out_dir = env::var("OUT_DIR").unwrap();
     println!("cargo:rustc-link-search=native={}/lib", dst.display());
-   // println!("cargo:rustc-link-lib=static=freetype");
+    println!("cargo:rustc-link-lib=static=soil2");
     println!("cargo:outdir={}", out_dir);
 }
