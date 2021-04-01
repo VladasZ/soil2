@@ -16,8 +16,6 @@
 	* everybody at gamedev.net
 */
 
-#define SOIL_CHECK_FOR_GL_ERRORS 0
-
 #if defined( __APPLE_CC__ ) || defined ( __APPLE__ )
 	#include <TargetConditionals.h>
 
@@ -1347,7 +1345,7 @@ unsigned int
 				GL_MAX_TEXTURE_SIZE );
 }
 
-#if SOIL_CHECK_FOR_GL_ERRORS
+#ifdef SOIL_CHECK_FOR_GL_ERRORS
 void check_for_GL_errors( const char *calling_location )
 {
 	/*	check for errors	*/
