@@ -13,7 +13,6 @@ repository = "https://github.com/VladasZ/soil2.git"
 homepage = "https://github.com/VladasZ/soil2"
 
 [build-dependencies]
-pkg-config = "0.3.19"
 cmake = "0.1.45"
 
 [dependencies]
