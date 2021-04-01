@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include "../SOIL2/SOIL2.h"
+#include "../soil2/SOIL2.h"
 
 int main() {
     
