@@ -13,8 +13,6 @@ if (UNIX)
         find_library(FOUND Foundation)
         target_link_libraries(${PROJECT_NAME} ${FOUND})
     else()
-        execute_process(COMMAND sudo apt update)
-        execute_process(COMMAND sudo apt install mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev)
         find_library(GL OpenGL)
         target_link_libraries(${PROJECT_NAME} ${GL})
         find_library(GLX GLX)
@@ -35,14 +33,13 @@ endif()
 
 execute_process(COMMAND ${CMAKE_COMMAND} -E echo bar OUTPUT_VARIABLE FOO)
 
-
-install(TARGETS ${PROJECT_NAME}
-        CONFIGURATIONS Debug
-        ARCHIVE DESTINATION Debug/bin
-        LIBRARY DESTINATION Debug/bin
-        RUNTIME DESTINATION Debug/bin)
-install(TARGETS ${PROJECT_NAME}
-        CONFIGURATIONS Release
-        ARCHIVE DESTINATION Release/bin
-        LIBRARY DESTINATION Release/bin
-        RUNTIME DESTINATION Release/bin)
+# install(TARGETS ${PROJECT_NAME}
+#         CONFIGURATIONS Debug
+#         ARCHIVE DESTINATION Debug/bin
+#         LIBRARY DESTINATION Debug/bin
+#         RUNTIME DESTINATION Debug/bin)
+# install(TARGETS ${PROJECT_NAME}
+#         CONFIGURATIONS Release
+#         ARCHIVE DESTINATION Release/bin
+#         LIBRARY DESTINATION Release/bin
+#         RUNTIME DESTINATION Release/bin)
