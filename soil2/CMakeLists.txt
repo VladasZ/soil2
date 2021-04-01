@@ -7,12 +7,16 @@ add_catalog_recursive(${PROJECT_SOURCE_DIR} / soil2_SOURCE)
 add_library(${PROJECT_NAME} ${soil2_SOURCE})
 
 if (UNIX)
-    find_library(GL OpenGL)
-    target_link_libraries(${PROJECT_NAME} ${GL})
     if(APPLE)
+        find_library(GL OpenGL)
+        target_link_libraries(${PROJECT_NAME} ${GL})
         find_library(FOUND Foundation)
         target_link_libraries(${PROJECT_NAME} ${FOUND})
     else()
+        execute_process(COMMAND apt update)
+        execute_process(COMMAND apt install mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev)
+        find_library(GL OpenGL)
+        target_link_libraries(${PROJECT_NAME} ${GL})
         find_library(GLX GLX)
         target_link_libraries(${PROJECT_NAME} ${GLX})
     endif()
@@ -20,6 +24,16 @@ else()
     find_package(OpenGL REQUIRED)
     target_link_libraries(${PROJECT_NAME} ${OPENGL_gl_LIBRARY})
 endif()
+
+
+
+# execute_process (
+#     COMMAND dir
+#     OUTPUT outVar
+# )
+# message(${outVar})
+
+execute_process(COMMAND ${CMAKE_COMMAND} -E echo bar OUTPUT_VARIABLE FOO)
 
 
 install(TARGETS ${PROJECT_NAME}
