@@ -12,6 +12,10 @@ readme = "README.md"
 repository = "https://github.com/VladasZ/soil2.git"
 homepage = "https://github.com/VladasZ/soil2"
 
+[lib]
+name = "soil2"
+crate-type = ["staticlib"]
+
 [build-dependencies]
 cmake = "0.1.45"
 
