@@ -9,9 +9,8 @@ extern "C" {
         width: *mut c_int,
         height: *mut c_int,
         channels: *mut c_int,
-        force_channels: c_int
+        force_channels: c_int,
     ) -> *mut c_uchar;
-
 
     pub fn SOIL_free_image_data(img_data: *mut c_uchar);
 }
