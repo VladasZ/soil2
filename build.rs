@@ -1,7 +1,6 @@
 extern crate cmake;
 
 fn main() {
-
     if option_env!("CARGO_CFG_TARGET_OS") == Some("android") {
         return;
     }
