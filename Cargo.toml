@@ -19,5 +19,4 @@ name = "soil2"
 cmake = "0.1.45"
 
 [dependencies]
-gl = "0.14.0"
 libc = "0.2.42"
